@@ -11,15 +11,13 @@ class Node:
         next.prev = self
  
     def remove(self):
-        # 不用自己管理内存就是好，直接修改前后节点的指向就行了
         self.prev.next = self.next
         self.next.prev = self.prev
         return self
  
  
 class LinkedList:
-    ''' 双向链表 '''
- 
+
     def __init__(self):
         self.__head = Node()
         self.__tail = Node()
@@ -66,7 +64,6 @@ class LinkedList:
         return None
  
     def find(self, value):
-        # 我这里设计的是，没有找到就为None
         find_pos = None
         count = 0
         cursor = self.__head
